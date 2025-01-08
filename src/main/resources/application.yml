@@ -19,7 +19,9 @@ springdoc:
   swagger-ui:
     enable: true
     path: /doc/swagger-ui.html
-  pathsToMatch: /candidate, /candidate/**, /auth/**
+  pathsToMatch: /client/**
+
+
 
 
 

@@ -7,6 +7,7 @@ import com.seek.pruebatecnica.domain.ports.in.FindAllClientsUseCase;
 import com.seek.pruebatecnica.infrastructure.adapters.restcontrollers.dtos.ClientResponse;
 import com.seek.pruebatecnica.infrastructure.adapters.restcontrollers.dtos.ClientWithLifeExpectancyResponse;
 import com.seek.pruebatecnica.infrastructure.adapters.restcontrollers.dtos.CreateClientRequest;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,8 @@ public class ClientRestController {
     private final CalculateStandardDeviationUseCase calculateStandardDeviationUseCase;
     private final FindAllClientsUseCase findAllClientsUseCase;
 
+
+    @Operation(summary = "Create new Client")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ClientResponse create(@RequestBody @Valid CreateClientRequest request) {
@@ -33,16 +36,19 @@ public class ClientRestController {
         return ClientResponse.convertFromDomain(client);
     }
 
+    @Operation(summary = "Calculate age average")
     @GetMapping("/average-age")
     public Integer averageAge() {
         return calculateAverageAgeUseCase.execute();
     }
 
+    @Operation(summary = "Calculate standard deviation")
     @GetMapping("/standard-deviation")
     public Double standardDeviation() {
         return calculateStandardDeviationUseCase.execute();
     }
 
+    @Operation(summary = "List all Clients with expectancy of life")
     @GetMapping
     public List<ClientWithLifeExpectancyResponse> findAll(){
         var clients = findAllClientsUseCase.execute();

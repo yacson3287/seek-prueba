@@ -22,7 +22,7 @@ public class SwaggerConfig {
                                 .name("Yacson Ramirez")
                                 .url("https://www.linkedin.com/in/yacson3287/"))
                         .version("1.0.0")
-                        .description("Backend Java SpringBoot 2024")
+                        .description("Backend Java SpringBoot 2025")
 
                 )
                 .servers(Collections.singletonList(new Server().url("http://localhost:8080")));
