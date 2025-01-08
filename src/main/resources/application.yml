@@ -1,0 +1,25 @@
+spring:
+  application:
+  name: demo
+  profiles:
+    active: local
+
+  flyway:
+    ignoreMigrationPatterns: "*:ignored"
+    outOfOrder: true
+
+  jpa:
+    hibernate:
+      database-platform: org.hibernate.dialect.MySQL8Dialect
+      ddl-auto: none
+
+springdoc:
+  api-docs:
+    enable: true
+  swagger-ui:
+    enable: true
+    path: /doc/swagger-ui.html
+  pathsToMatch: /candidate, /candidate/**, /auth/**
+
+
+
