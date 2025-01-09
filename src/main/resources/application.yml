@@ -18,7 +18,7 @@ springdoc:
     enable: true
   swagger-ui:
     enable: true
-    path: /doc/swagger-ui.html
+    path: /doc/swagger-ui
   pathsToMatch: /client/**
 
 
