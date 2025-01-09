@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    url: jdbc:mysql://database01.crmow4qii4xo.us-east-1.rds.amazonaws.com:3306/seek
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: admin
+    password: root2024
+
